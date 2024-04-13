@@ -7,13 +7,70 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:id="@+id/etC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter number"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/etB"
+        app:layout_constraintStart_toStartOf="@+id/etB"
+        app:layout_constraintTop_toBottomOf="@+id/etB" />
+
+    <EditText
+        android:id="@+id/etA"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter number"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="Enter number"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="@+id/etA"
+        app:layout_constraintStart_toStartOf="@+id/etA"
+        app:layout_constraintTop_toBottomOf="@+id/etA" />
+
+    <Button
+        android:id="@+id/solve"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginBottom="140dp"
+        android:text="solve"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:rippleColor="#00C8C8" />
+
+    <Button
+        android:id="@+id/random"
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginEnd="40dp"
+        android:text="random numbers"
+        android:textColor="#000000"
+        android:textSize="24sp"
+        android:onClick="random"
+        app:layout_constraintBottom_toBottomOf="@+id/solve"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/solve"
+        app:rippleColor="#00C8C8" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
