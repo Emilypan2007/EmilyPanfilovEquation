@@ -1,5 +1,6 @@
 package com.example.emilypanfilovequation;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -18,6 +19,9 @@ public class MainActivity extends AppCompatActivity {
     private EditText etA,etB,etC;
     private Button random,solve;
     Random rnd=new Random();
+    String strA,strB,strC;
+    float numA,numB,numC;
+    private final int REQUEST_CODE=100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +43,25 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void random(View view) {
-        etA.setText(rnd.nextDouble()*401-200+"");
-        etB.setText(rnd.nextDouble()*401-200+"");
-        etC.setText(rnd.nextDouble()*401-200+"");
+        etA.setText(rnd.nextFloat()*401-200+"");
+        etB.setText(rnd.nextFloat()*401-200+"");
+        etC.setText(rnd.nextFloat()*401-200+"");
+    }
+
+    public void go(View view) {
+        strA=etA.getText().toString();
+        strB=etB.getText().toString();
+        strC=etC.getText().toString();
+        if(!strA.isEmpty() && !strB.isEmpty() && !strC.isEmpty()){
+            numA=Float.parseFloat(strA);
+            numB=Float.parseFloat(strB);
+            numC=Float.parseFloat(strC);
+            Intent si=new Intent(MainActivity.this, MainActivity2.class);
+            si.putExtra("a",numA);
+            si.putExtra("b",numB);
+            si.putExtra("c",numC);
+            startActivityForResult(si,REQUEST_CODE);
+        }
+
     }
 }
